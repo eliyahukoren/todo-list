@@ -6,6 +6,9 @@ on: [push]
 jobs:
   Init:
     runs-on: ubuntu-latest
+    env:
+      PORT: 8080
+
     strategy:
       matrix:
         node-version: [16.x]
