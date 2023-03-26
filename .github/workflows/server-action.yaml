@@ -1,8 +1,7 @@
 name: ToDo List - Server
 run-name: ${{ github.actor }} 🚀
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
   Init:
