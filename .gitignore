@@ -10,6 +10,8 @@
 
 # misc
 /client/.DS_Store
+/server/nodemon.json
+/server/dist
 
 /client/yarn-debug.log*
 /client/yarn-error.log*
