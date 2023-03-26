@@ -1,9 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from 'axios';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { ITodo } from "../../interfaces/todo";
-
-const BASE_URL = process.env.BASE_URL || 'http://localhost:4000';
+import { fetchAllTodos } from "./todoAPI";
 
 export interface ToDoState {
   todos: ITodo[];
@@ -16,23 +14,6 @@ const initialState: ToDoState = {
   isLoading: false,
   error: "",
 };
-
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
-// typically used to make async requests.
-export const fetchAllTodos = createAsyncThunk(
-  "todos/fetchAll",
-  async (_, thunkApi) => {
-    try{
-      const response = await axios.get<ITodo[]>(`${BASE_URL}/todos`);
-      return response.data;
-    }catch(err){
-      return thunkApi.rejectWithValue('error message');
-    }
-  }
-);
 
 export const todoSlice = createSlice({
   name: 'todos',
@@ -66,14 +47,19 @@ export const todoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllTodos.fulfilled.type, (state, action: PayloadAction<ITodo[]>) => {
+        console.log("fulfilled");
+        console.log({was: state.todos});
         state.isLoading = false;
         state.todos = action.payload;
         state.error = '';
+        console.log({ now: state.todos });
       })
       .addCase(fetchAllTodos.pending.type, (state) => {
+        console.log('pending');
         state.isLoading = true;
       })
       .addCase(fetchAllTodos.rejected.type, (state, action: PayloadAction<string>) => {
+        console.log("rejected");
         state.isLoading = false;
         state.error = action.payload;
       });
@@ -85,6 +71,6 @@ export const { addTodo, updateTodo, deleteTodo } = todoSlice.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectTodo = (state: RootState) => state.todo;
+export const selectTodo = (state: RootState) => state.todos;
 
 export default todoSlice.reducer;
