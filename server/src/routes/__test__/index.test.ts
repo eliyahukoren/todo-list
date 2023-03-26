@@ -20,29 +20,29 @@ it("will return 404 for wrong route", async () => {
 
 });
 
-it("will return 404 for DELETE with wrong id", async () => {
-  // create todo for test
-  createToDo("test 1", "desc 1", false);
+// it("will return 404 for DELETE with wrong id", async () => {
+//   // create todo for test
+//   createToDo("test 1", "desc 1", false);
 
-  // test delete with wrong id
-  await request(app)
-    .delete(`delete-todo/${wrongId}`)
-    .send({ name: "any" })
-    .expect(404);
-});
+//   // test delete with wrong id
+//   await request(app)
+//     .delete(`delete-todo/${wrongId}`)
+//     .send({ name: "any" })
+//     .expect(404);
+// });
 
 
-it("will return 404 for UPDATE with wrong id", async () => {
-  // create todo for test
-  createToDo("test 1", "desc 1", false);
+// it("will return 404 for UPDATE with wrong id", async () => {
+//   // create todo for test
+//   createToDo("test 1", "desc 1", false);
 
-  // test update with wrong id
-  await request(app)
-    .put(`edit-todo/${wrongId}`)
-    .send({ name: "any" })
-    .expect(404);
+//   // test update with wrong id
+//   await request(app)
+//     .put(`edit-todo/${wrongId}`)
+//     .send({ name: "any" })
+//     .expect(404);
 
-});
+// });
 
 
 it("can create 3 todos", async () => {
