@@ -4,7 +4,7 @@
 
 ##
 
-![](https://img.shields.io/github/actions/workflow/status/eliyahukoren/todo-list/action.yaml?label=ToDo%20List&logo=logo)
+![](https://img.shields.io/github/actions/workflow/status/eliyahukoren/todo-list/server-action.yaml?label=ToDo%20List%20%28Server%29&logo=logo)
 
 ##
 
