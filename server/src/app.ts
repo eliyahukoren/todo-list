@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(cors());
 app.use(todoRoutes);
 
+app.all("*", async (req, res) => {
+  res.status(404).json({message: "Something went wrong!"});
+});
+
 const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 
 mongoose
@@ -21,5 +25,5 @@ mongoose
     )
   )
   .catch((error) => {
-    throw error;
+    console.log(error)
   });
