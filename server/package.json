@@ -1,0 +1,8 @@
+{
+  "name": "todolist-server-ts-node",
+  "version": "1.0.0",
+  "description": "NodeJS ToDo List Api - Server",
+  "main": "index.js",
+  "author": "Eli Koren",
+  "license": "MIT"
+}
