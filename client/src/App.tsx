@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Layout from "./components/Layout";
 
 const Wrapper = styled.div({
   display: "flex",
@@ -12,7 +13,7 @@ const Wrapper = styled.div({
 function App() {
   return (
     <Wrapper>
-      <h1>Hi There!</h1>
+      <Layout />
     </Wrapper>
   );
 }
