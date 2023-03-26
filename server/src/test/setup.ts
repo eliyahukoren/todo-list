@@ -1,10 +1,6 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 
-declare global {
-  var generateId: () => string;
-}
-
 let mongo: any;
 
 beforeAll(async () => {
@@ -29,7 +25,3 @@ afterAll(async () => {
   }
   await mongoose.connection.close();
 });
-
-global.generateId = () => {
-  return new mongoose.Types.ObjectId().toHexString();
-};

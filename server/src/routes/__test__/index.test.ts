@@ -2,6 +2,8 @@ import request from "supertest";
 import { app } from "../../app";
 import { ITodo } from "./../../types/todo";
 
+const wrongId = "642075d93afd22a47a69ae47";
+
 const createToDo = async (
   name: string,
   description: string,
@@ -22,9 +24,6 @@ it("will return 404 for DELETE with wrong id", async () => {
   // create todo for test
   createToDo("test 1", "desc 1", false);
 
-  // create new id
-  const wrongId = global.generateId();
-
   // test delete with wrong id
   await request(app)
     .delete(`delete-todo/${wrongId}`)
@@ -33,12 +32,9 @@ it("will return 404 for DELETE with wrong id", async () => {
 });
 
 
-it("will return 404 for update/delete with wrong id", async () => {
+it("will return 404 for UPDATE with wrong id", async () => {
   // create todo for test
   createToDo("test 1", "desc 1", false);
-
-  // create new id
-  const wrongId = global.generateId();
 
   // test update with wrong id
   await request(app)
