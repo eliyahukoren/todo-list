@@ -14,9 +14,24 @@ const createToDo = async (
 
 it("will return 404 for wrong route", async () => {
 
-  const response = await request(app).get("/any").send().expect(404);
+  await request(app).get("/any").send().expect(404);
 
 });
+
+it("will return 404 for DELETE with wrong id", async () => {
+  // create todo for test
+  createToDo("test 1", "desc 1", false);
+
+  // create new id
+  const wrongId = global.generateId();
+
+  // test delete with wrong id
+  await request(app)
+    .delete(`delete-todo/${wrongId}`)
+    .send({ name: "any" })
+    .expect(404);
+});
+
 
 it("will return 404 for update/delete with wrong id", async () => {
   // create todo for test
@@ -31,11 +46,6 @@ it("will return 404 for update/delete with wrong id", async () => {
     .send({ name: "any" })
     .expect(404);
 
-  // test delete with wrong id
-  await request(app)
-    .delete(`delete-todo/${wrongId}`)
-    .send({ name: "any" })
-    .expect(404);
 });
 
 
