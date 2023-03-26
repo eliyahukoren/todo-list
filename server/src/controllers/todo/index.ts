@@ -2,6 +2,14 @@ import { Request, Response } from "express";
 import Todo from "../../models/todo";
 import { ITodo } from "./../../types/todo";
 
+const errorHandler = (res: Response, error: any) => {
+  let message;
+  if (error instanceof Error) message = error.message;
+  else message = String(error);
+
+  res.status(500).json({message});
+}
+
 const read = async (req: Request, res: Response): Promise<void> => {
   try {
     const todos: ITodo[] = await Todo.find();
@@ -28,7 +36,7 @@ const create = async (req: Request, res: Response): Promise<void> => {
       .status(201)
       .json({ message: "Todo created", todo: newTodo, todos: allTodos });
   } catch (error) {
-    throw error;
+    errorHandler(res, error);
   }
 };
 
@@ -49,7 +57,7 @@ const update = async (req: Request, res: Response): Promise<void> => {
       todos: allTodos,
     });
   } catch (error) {
-    throw error;
+    errorHandler(res, error);
   }
 };
 
@@ -65,7 +73,7 @@ const remove = async (req: Request, res: Response): Promise<void> => {
       todos: allTodos,
     });
   } catch (error) {
-    throw error;
+    errorHandler(res, error);
   }
 };
 
