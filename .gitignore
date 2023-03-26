@@ -17,3 +17,4 @@
 /client/yarn-error.log*
 /server/yarn-debug.log*
 /server/yarn-error.log*
+client/src/features/counter
