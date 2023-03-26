@@ -1,5 +1,16 @@
 #### ToDo List
 
+![codewars](https://www.codewars.com/users/eliyahukoren/badges/large)
+
+##
+
+![](https://img.shields.io/github/actions/workflow/status/eliyahukoren/todo-list/action.yaml?label=ToDo%20List&logo=logo)
+
+##
+
+![Language](https://img.shields.io/badge/Language-Typescript-blue)
+
+
 - API with NodeJS, Express, MongoDB and TypeScript
   - Setting up
   - Create a Todo Type
