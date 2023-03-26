@@ -18,7 +18,15 @@ const todoSchema: Schema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  {
+    toJSON: {
+      transform(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+      },
+    },
+    timestamps: true,
+  }
 );
 
 export default model<ITodo>("Todo", todoSchema);
