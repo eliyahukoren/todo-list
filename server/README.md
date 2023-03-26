@@ -1,4 +1,4 @@
-#### Fullstack App example
+#### Fullstack App example (Server)
 
 ##### Using NodeJS, Typescript, Express, MongoDB
 
