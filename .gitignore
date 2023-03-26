@@ -1,0 +1,15 @@
+# dependencies
+/client/node_modules
+/server/node_modules
+
+# testing
+/client/coverage
+
+# production
+/client/build
+
+# misc
+/client/.DS_Store
+
+/client/yarn-debug.log*
+/client/yarn-error.log*
