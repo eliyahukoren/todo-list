@@ -2,9 +2,10 @@ name: ToDo List - Client
 run-name: ${{ github.actor }} 🚀
 
 on:
-  workflow_complete:
-    workflow: ToDo List - Server
-      types: [success]
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   Init:
