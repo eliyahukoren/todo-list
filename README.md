@@ -8,6 +8,10 @@
 
 ##
 
+![](https://img.shields.io/github/actions/workflow/status/eliyahukoren/todo-list/client-action.yaml?label=ToDo%20List%20%28Client%29&logo=logo)
+
+##
+
 ![Language](https://img.shields.io/badge/Language-Typescript-blue)
 
 
