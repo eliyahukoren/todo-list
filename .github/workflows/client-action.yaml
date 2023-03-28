@@ -1,7 +1,10 @@
 name: ToDo List - Client
 run-name: ${{ github.actor }} 🚀
 
-on: [push]
+on:
+  workflow_complete:
+    workflow: ToDo List - Server
+      types: [success]
 
 jobs:
   Init:
