@@ -45,14 +45,12 @@ it("will return 404 for wrong route", async () => {
 // });
 
 
-it("can create 3 todos", async () => {
+it("can create todo", async () => {
   createToDo("test 1", "desc 1", false);
 
   const response = await request(app).get("/todos").send().expect(200);
 
-  const { todos } = response.body;
-
-  expect(todos.length).toEqual(1);
+  expect(response.body.length).toEqual(1);
 });
 
 
@@ -63,9 +61,7 @@ it("can fetch a list of todos", async () => {
 
   const response = await request(app).get("/todos").send().expect(200);
 
-  const { todos } = response.body;
-
-  expect(todos.length).toEqual(3);
+  expect(response.body.length).toEqual(3);
 });
 
 
@@ -77,7 +73,7 @@ it("can update data of todo", async () => {
   const response = await request(app).get("/todos").send().expect(200);
 
   // get id of created todo
-  const { id } = response.body.todos[0];
+  const { id } = response.body[0];
 
   // create another todos
   createToDo("test 2", "desc 2", false);
@@ -125,7 +121,7 @@ it("can delete todo", async () => {
   const response = await request(app).get("/todos").send().expect(200);
 
   // get id of created todo
-  const { id } = response.body.todos[0];
+  const { id } = response.body[0];
 
   // create another todos
   createToDo("test 2", "desc 2", false);

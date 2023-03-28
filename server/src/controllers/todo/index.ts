@@ -13,7 +13,7 @@ const errorHandler = (res: Response, error: any) => {
 const read = async (req: Request, res: Response): Promise<void> => {
   try {
     const todos: ITodo[] = await Todo.find();
-    res.status(200).json({ todos });
+    res.status(200).send(todos)
   } catch (error) {
     throw error;
   }
@@ -34,7 +34,7 @@ const create = async (req: Request, res: Response): Promise<void> => {
 
     res
       .status(201)
-      .json({ message: "Todo created", todo: newTodo, todos: allTodos });
+      .send({ message: "Todo created", todo: newTodo, todos: allTodos });
   } catch (error) {
     errorHandler(res, error);
   }
@@ -51,7 +51,7 @@ const update = async (req: Request, res: Response): Promise<void> => {
       body
     );
     const allTodos: ITodo[] = await Todo.find();
-    res.status(200).json({
+    res.status(200).send({
       message: "Todo updated",
       todo: updateTodo,
       todos: allTodos,
@@ -67,7 +67,7 @@ const remove = async (req: Request, res: Response): Promise<void> => {
       req.params.id
     );
     const allTodos: ITodo[] = await Todo.find();
-    res.status(200).json({
+    res.status(200).send({
       message: "Todo removed",
       todo: deletedTodo,
       todos: allTodos,
