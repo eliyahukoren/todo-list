@@ -25,7 +25,7 @@ export const deleteTodoAPI = createAsyncThunk(
   async (id: string, thunkApi) => {
     try {
       const deletedTodo = await axios.delete(`${BASE_URL}/delete-todo/${id}`);
-      return deletedTodo;
+      return JSON.stringify(deletedTodo);
     } catch (err) {
       return thunkApi.rejectWithValue("error message");
     }
