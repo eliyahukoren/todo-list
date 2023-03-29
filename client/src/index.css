@@ -116,10 +116,10 @@ body {
   padding-inline-end: 5px;
 }
 
-.filter>div{
-  padding: 5px;
+.filter--option{
+  padding-left: 5px;
 }
 
-.filter label {
+.filter--option>label {
   margin-left: 5px;
 }

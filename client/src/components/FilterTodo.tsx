@@ -23,7 +23,7 @@ const FilterTodo: React.FC = () => {
     <div>
       <fieldset>
         <legend className="filter">Filter ToDo</legend>
-        <div className="filter--">
+        <div className='filter--option'>
           <input
             type="checkbox"
             id="complete"
@@ -32,7 +32,7 @@ const FilterTodo: React.FC = () => {
           />
           <label htmlFor="complete">Complete</label>
         </div>
-        <div>
+        <div className='filter--option'>
           <input
             type="checkbox"
             id="uncomplete"
