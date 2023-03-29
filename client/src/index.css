@@ -110,3 +110,16 @@ body {
 .hide-button {
   display: none;
 }
+
+.filter {
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
+}
+
+.filter>div{
+  padding: 5px;
+}
+
+.filter label {
+  margin-left: 5px;
+}

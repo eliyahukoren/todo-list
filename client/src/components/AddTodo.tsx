@@ -69,6 +69,7 @@ const AddTodo: React.FC = () => {
           </div>
           <button data-testid="add-button">Add Todo</button>
         </form>
+
       </div>
 
       <div className="form--error">

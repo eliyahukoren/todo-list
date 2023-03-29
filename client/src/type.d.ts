@@ -17,3 +17,8 @@ type ApiDataType = {
   todos: ITodo[];
   todo?: ITodo;
 };
+
+type ToDoFilter = {
+  showCompleted: boolean;
+  showUncompleted: boolean;
+}
