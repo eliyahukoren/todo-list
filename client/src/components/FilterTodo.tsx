@@ -30,7 +30,7 @@ const FilterTodo: React.FC = () => {
             defaultChecked={filterCompleted}
             onChange={() => setFilterCompleted(!filterCompleted)}
           />
-          <label htmlFor="coding">Complete</label>
+          <label htmlFor="complete">Complete</label>
         </div>
         <div>
           <input
@@ -39,7 +39,7 @@ const FilterTodo: React.FC = () => {
             defaultChecked={filterCompleted}
             onChange={() => setFilterUnCompleted(!filterUnCompleted)}
           />
-          <label htmlFor="music">Uncomplete</label>
+          <label htmlFor="uncomplete">Uncomplete</label>
         </div>
       </fieldset>
     </div>
