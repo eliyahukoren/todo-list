@@ -3,7 +3,7 @@ import { useAppDispatch } from "../app/hooks";
 import { fetchAllTodos } from "../features/todo/todoAPI";
 import { filterTodoAction } from "../features/todo/todoSlice";
 
-const SearchTodo: React.FC = () => {
+const FilterTodo: React.FC = () => {
   const dispatch = useAppDispatch();
   const [filterCompleted, setFilterCompleted] = useState(false);
   const [filterUnCompleted, setFilterUnCompleted] = useState(false);
@@ -46,4 +46,4 @@ const SearchTodo: React.FC = () => {
   );
 };
 
-export default SearchTodo;
+export default FilterTodo;
