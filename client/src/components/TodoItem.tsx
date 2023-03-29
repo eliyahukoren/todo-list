@@ -21,7 +21,6 @@ const TodoItem: React.FC<TodoProps> = ({ todo }) => {
     );
   };
 
-
   const checkTodo: string = todo.status ? `line-through` : '' ;
   return (
     <div className="card">
@@ -32,10 +31,17 @@ const TodoItem: React.FC<TodoProps> = ({ todo }) => {
 
       <div className="card--button">
         <button
-          onClick={() => updateTodo(todo)}
+          onClick={() => updateTodo({ ...todo, status: true })}
           className={todo.status ? `hide-button` : `card--button__done`}
         >
           Complete
+        </button>
+
+        <button
+          onClick={() => updateTodo({ ...todo, status: false })}
+          className={!todo.status ? `hide-button` : `card--button__reset`}
+        >
+          Uncomplete
         </button>
 
         <button

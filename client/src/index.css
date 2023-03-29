@@ -56,6 +56,12 @@ body {
   margin-right: 1rem;
 }
 
+.card--button__reset {
+  border: 1px solid #ff9900;
+  color: #ff9900;
+  margin-right: 1rem;
+}
+
 .form {
   display: flex;
   justify-content: space-between;

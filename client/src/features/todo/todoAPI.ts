@@ -39,7 +39,7 @@ export const updateTodoAPI = createAsyncThunk(
     try {
 
       const todoUpdate: Pick<ITodo, 'status'> = {
-        status: true,
+        status: todo.status,
       };
 
       const updatedTodo = await axios.put(
