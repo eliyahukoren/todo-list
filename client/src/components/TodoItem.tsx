@@ -31,6 +31,7 @@ const TodoItem: React.FC<TodoProps> = ({ todo }) => {
 
       <div className="card--button">
         <button
+          data-testid="button-complete"
           onClick={() => updateTodo({ ...todo, status: true })}
           className={todo.status ? `hide-button` : `card--button__done`}
         >
@@ -38,6 +39,7 @@ const TodoItem: React.FC<TodoProps> = ({ todo }) => {
         </button>
 
         <button
+          data-testid="button-uncomplete"
           onClick={() => updateTodo({ ...todo, status: false })}
           className={!todo.status ? `hide-button` : `card--button__reset`}
         >
