@@ -13,6 +13,8 @@
 ##
 
 ![Language](https://img.shields.io/badge/Language-Typescript-blue)
+![Language](https://img.shields.io/badge/Language-HTML-purple)
+![Language](https://img.shields.io/badge/Language-CSS-red)
 
 
 - API with NodeJS, Express, MongoDB and TypeScript
