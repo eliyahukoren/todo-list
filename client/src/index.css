@@ -19,7 +19,7 @@ body {
   margin: 4rem auto;
 }
 
-.app>h1 {
+.app>h1, h4 {
   text-align: center;
   margin: 1rem 0;
 }
