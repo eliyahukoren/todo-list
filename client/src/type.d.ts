@@ -11,6 +11,10 @@ type TodoProps = {
   todo: ITodo;
 };
 
+type TodoListProps = {
+  todos: ITodo[]
+}
+
 type ApiDataType = {
   message: string;
   status: string;
